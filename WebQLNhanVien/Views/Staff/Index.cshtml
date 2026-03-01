@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<WebQLNhanVien.Models.NhanVien>
+
+<h2>Quản lý nhân viên</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create","Staff")
+</p>
+
+<form method="get">
+    Tìm kiếm:
+    <input type="text" name="keyword" />
+    <button type="submit">Tìm</button>
+</form>
+
+<table border="1" width="100%">
+    <tr>
+        <th>Mã NV</th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>SĐT</th>
+        <th>Chức vụ</th>
+        <th>Thao tác</th>
+    </tr>
+
+    @foreach (var nv in Model)
+    {
+        <tr>
+            <td>@nv.MaNV</td>
+            <td>@nv.HoTen</td>
+            <td>@nv.NgaySinh.ToShortDateString()</td>
+            <td>@nv.soDT</td>
+            <td>@nv.chucVu</td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = nv.MaNV }) |
+                <a href="/Staff/Delete/@nv.MaNV"
+                   onclick="return confirm('Bạn có chắc muốn xóa?');">
+                    Xóa
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+

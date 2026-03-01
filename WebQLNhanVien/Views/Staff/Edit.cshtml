@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+@model WebQLNhanVien.Models.NhanVien
+
+<h2>Sửa thông tin nhân viên</h2>
+
+@using (Html.BeginForm("Update", "Staff", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.MaNV)
+    <div>
+        <label for="HoTen">Họ và tên:</label>
+        @Html.TextBoxFor(model => model.HoTen, new { id = "HoTen", required = "required" })
+    </div>
+    <div>
+        <label for="NgaySinh">Ngày sinh:</label>
+        @Html.TextBoxFor(model => model.NgaySinh, "{0:yyyy-MM-dd}", new { type = "date", id = "NgaySinh", required = "required" })
+    </div>
+    <div>
+        <label for="soDT">SĐT:</label>
+        @Html.TextBoxFor(model => model.soDT, new { id = "soDT", required = "required" })
+    </div>
+    <div>
+        <label for="chucVu">Chức vụ:</label>
+        @Html.TextBoxFor(model => model.chucVu, new { id = "chucVu", required = "required" })
+    </div>
+    <button type="submit">Lưu thay đổi</button>
+    @Html.ActionLink("Hủy bỏ", "Index", "Staff")
+}
+

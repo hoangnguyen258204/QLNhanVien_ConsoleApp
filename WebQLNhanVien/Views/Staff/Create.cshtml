@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+@model WebQLNhanVien.Models.NhanVien
+
+<h2>Thêm mới nhân viên</h2>
+
+@using (Html.BeginForm("Create", "Staff", FormMethod.Post))
+{
+    <div>
+        <label for="HoTen">Họ và tên:</label>
+        <input type="text" id="HoTen" name="HoTen" required />
+    </div>
+    <div>
+        <label for="NgaySinh">Ngày sinh:</label>
+        <input type="date" id="NgaySinh" name="NgaySinh" required />
+    </div>
+    <div>
+        <label for="soDT">SĐT:</label>
+        <input type="text" id="soDT" name="soDT" required />
+    </div>
+    <div>
+        <label for="chucVu">Chức vụ:</label>
+        <input type="text" id="chucVu" name="chucVu" required />
+    </div>
+    <button type="submit">Thêm mới</button>
+    @Html.ActionLink("Hủy bỏ","Index","Staff")
+}
+
+
+

@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="LamquenCs/LamquenCs.csproj" />
   <Project Path="QLNhanVien_ConsoleApp/QLNhanVien_ConsoleApp.csproj" Id="f51ac759-ad52-4924-b2cc-cb467a16ff9a" />
+  <Project Path="WebQLNhanVien/WebQLNhanVien.csproj" Id="9e5bea44-a6f7-4fb5-9f2a-25d63caaa2f1" />
 </Solution>
